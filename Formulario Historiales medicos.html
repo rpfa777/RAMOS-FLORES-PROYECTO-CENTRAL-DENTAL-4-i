@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Alta de Historial Médico</title>
+</head>
+<body>
+
+<header>
+    <h1>Alta de Historial Médico - Consultorio Central Dental</h1>
+    <img width="100" align="center" src="dentistaa.png" alt="Dentista">
+    <p>Bienvenido a Central Dental, por favor rellene el formulario solicitado.</p>
+</header>
+
+<main>
+    <div class="form-container">
+        <form action="altas_historial.html" method="POST">
+            <div class="form-group">
+                <label>Nombre del Paciente:</label>
+                <input type="text" name="paciente" placeholder="Ej: Guadalupe Clara Mendoza Pérez" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Alergias:</label>
+                <input type="text" name="alergias" placeholder="Ej: Ninguna o Mariscos" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Enfermedades:</label>
+                <input type="text" name="enfermedades" placeholder="Ej: Ninguna o Diabetes" required>
+            </div>
+
+            <div class="form-group">
+                <label>Medicamentos:</label>
+                <input type="text" name="medicamentos" placeholder="Ej: Ninguno o Ibuprofeno" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cirugías:</label>
+                <input type="text" name="cirugias" placeholder="Ej: Ninguna o Cesárea" required>
+            </div>
+
+            <div class="form-group">
+                <label>¿Es Fumador?:</label>
+                <input type="text" name="fumador" placeholder="Ej: No o Sí" required>
+            </div>
+
+            <div class="form-group">
+                <label>Diagnóstico:</label>
+                <input type="text" name="diagnostico" placeholder="Ej: Caries tratada en diente 11" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Registrar Historial Médico</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>Ramos Flores Alexis </p>
+    <p>Programación </p>
+    <p>24308051280643 </p>
+    <p>4-I </p>
+</footer>
+
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background-color: #66FFCD;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    header {
+        background-color: #66FFCD;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    h1 {
+        color: Teal;
+        font-family: 'Jua', sans-serif;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 40px 20px;
+        flex: 1;
+    }
+
+    .form-container {
+        max-width: 500px;
+        width: 100%;
+        background: LightCyan;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border-top: 6px solid CadetBlue;
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: Black;
+        font-size: 14px;
+    }
+    
+    input[type="text"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid Black;
+        border-radius: 6px;
+        font-family: "Times New Roman", sans-serif;
+        font-size: 14px;
+        background-color: Azure;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: SkyBlue;
+        background-color: AliceBlue;
+        box-shadow: 0 0 5px rgba(0, 128, 128, 0.4);
+    }
+
+    .btn-submit {
+        background-color: DarkSlateGray;
+        color: white;
+        border: none;
+        padding: 14px 15px;
+        width: 100%;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: "Poppins", sans-serif;
+        margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+        background-color: DarkSeaGreen;
+    }
+
+    footer {
+        width: 100%;
+        background-color: Azure;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 13px;
+        color: #776a78;
+    }
+
+    footer p {
+        margin: 4px 0;
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+</html>
