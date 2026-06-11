@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Pacientes</title>
+<style>
+    body { background-color: #cbf9ff; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+    .btn-agregar { background-color: green; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    table { border-collapse: collapse; width: 100%; background-color: #ffffff; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    thead tr { background-color: #f2f2f2; }
+    .btn-regresar { color: blue; font-weight: bold; font-size: 16px; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h3>Colección: Pacientes</h3>
+<div style="margin-bottom: 15px;">
+    <a href="/pacientes/nuevo" class="btn-agregar">+ Agregar Paciente</a>
+</div>
+
+<table>
+<thead>
+    <tr>
+        <th>id_paciente</th>
+        <th>nombre_completo</th>
+        <th>f_nacimiento</th>
+        <th>genero</th>
+        <th>telefono</th>
+        <th>correo</th>
+        <th>rfc</th>
+        <th>aseguradora</th>
+        <th>Acciones</th>
+    </tr>
+</thead>
+<tbody>
+    {% for p in pacientes %}
+    <tr>
+        <td>{{ p.id_paciente }}</td>
+        <td>{{ p.nombre_completo }}</td>
+        <td>{{ p.f_nacimiento }}</td>
+        <td>{{ p.genero }}</td>
+        <td>{{ p.telefono }}</td>
+        <td>{{ p.correo }}</td>
+        <td>{{ p.rfc }}</td>
+        <td>{{ p.aseguradora }}</td>
+        <td>
+            <a href="/pacientes/editar/{{ p.id_paciente }}" style="background-color: orange; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">Editar</a>
+            <form action="/pacientes/borrar/{{ p.id_paciente }}" method="POST" style="display:inline;">
+                <button type="submit" style="background-color: red; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px;">Borrar</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<hr style="border: 1px dashed Teal; margin-top: 30px;">
+<div style="text-align:center;">
+    <a href="/" class="btn-regresar">← Volver al Menú Principal</a>
+</div>
+
+</body>
+</html>

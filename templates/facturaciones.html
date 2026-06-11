@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Facturaciones</title>
+<style>
+    body { background-color: #cbf9ff; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+    .btn-agregar { background-color: green; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    table { border-collapse: collapse; width: 100%; background-color: #ffffff; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    thead tr { background-color: #f2f2f2; }
+    .btn-regresar { color: blue; font-weight: bold; font-size: 16px; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h3>Colección: Facturaciones</h3>
+<div style="margin-bottom: 15px;">
+    <a href="/facturaciones/nuevo" class="btn-agregar">+ Agregar Facturación</a>
+</div>
+
+<table>
+<thead>
+    <tr>
+        <th>id_factura</th>
+        <th>paciente</th>
+        <th>total</th>
+        <th>pagado</th>
+        <th>saldo</th>
+        <th>metodo</th>
+        <th>Acciones</th>
+    </tr>
+</thead>
+<tbody>
+    {% for f in facturaciones %}
+    <tr>
+        <td>{{ f.id_factura }}</td>
+        <td>{{ f.paciente }}</td>
+        <td>{{ f.total }}</td>
+        <td>{{ f.pagado }}</td>
+        <td>{{ f.saldo }}</td>
+        <td>{{ f.metodo }}</td>
+        <td>
+            <a href="/facturaciones/editar/{{ f.id_factura }}" style="background-color: orange; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">Editar</a>
+            <form action="/facturaciones/borrar/{{ f.id_factura }}" method="POST" style="display:inline;">
+                <button type="submit" style="background-color: red; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-size: 13px;">Borrar</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<hr style="border: 1px dashed Teal; margin-top: 30px;">
+<div style="text-align:center;">
+    <a href="/" class="btn-regresar">← Volver al Menú Principal</a>
+</div>
+
+</body>
+</html>

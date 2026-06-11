@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Central Dental</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: Arial, sans-serif; margin: 0; }
+header {
+    background-color: #aef8ff;
+    padding: 50px;
+    text-align: center;
+    font-size: 35px;
+    color: blue;
+}
+section { display: flex; }
+nav { flex: 1; background: #aef8ff; padding: 20px; }
+nav ul { list-style-type: none; padding: 0; }
+nav ul li a {
+    display: block;
+    border: 2px solid white;
+    background-color: #fcfcfc;
+    padding: 8px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: CadetBlue;
+}
+nav ul li a:hover { background-color: white; color: #0000ff; }
+article { flex: 3; background-color: CornSilk; padding: 10px; min-height: 300px; }
+footer {
+    background-color: #aef8ff;
+    padding: 90px;
+    text-align: center;
+    color: CadetBlue;
+    clear: both;
+}
+/* Estilos extra para mostrar tus contadores de la base de datos */
+.dashboard-stats { margin-top: 20px; }
+.stat-item { background: #fff; padding: 10px; margin-bottom: 5px; border-radius: 4px; border-left: 5px solid blue; }
+
+@media (max-width: 600px) { section { flex-direction: column; } }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="{{ url_for('static', filename='fotodental.png') }}" alt="Dentista" width="200">
+</header>
+
+<section>
+<nav>
+    <ul>
+        <li><a href="/pacientes">Pacientes</a></li>
+        <li><a href="/medicos">Médicos</a></li>
+        <li><a href="/historial">Historiales Médicos</a></li>
+        <li><a href="/controlcitas">Control de Citas</a></li>
+        <li><a href="/facturaciones">Facturaciones</a></li>
+    </ul>
+</nav>
+<article>
+    <h2>Especificaciones</h2>
+    <p>Central Dental es el nombre de mi proyecto sobre la base de datos de un dentista.</p>
+    
+    <div class="dashboard-stats">
+        <h3>Resumen del Sistema:</h3>
+        <div class="stat-item"><strong>Total Pacientes registrados:</strong> {{ total_pacientes }}</div>
+        <div class="stat-item"><strong>Total Médicos activos:</strong> {{ total_medicos }}</div>
+        <div class="stat-item"><strong>Historiales Clínicos:</strong> {{ total_historial }}</div>
+        <div class="stat-item"><strong>Citas Programadas:</strong> {{ total_citas }}</div>
+        <div class="stat-item"><strong>Facturas Emitidas:</strong> {{ total_facturaciones }}</div>
+    </div>
+</article>
+</section>
+
+<footer>
+    <p>Nombre: Ramos Flores Pedro Alexis<br>
+    Número De Control: 24308051280643<br>
+    Grado Y Grupo: 4ºI<br>
+    Especialidad: Programación</p>
+</footer>
+
+</body>
+</html>

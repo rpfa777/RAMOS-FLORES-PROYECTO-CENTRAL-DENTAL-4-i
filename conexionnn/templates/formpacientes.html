@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jua:wght@400;700&display=swap&quot; rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap&quot; rel="stylesheet">
+
+    <title>Alta de Pacientes </title>
+
+</head>
+
+<body>
+
+
+
+<header>
+
+    <h1>Alta de Pacientes - Consultorio Central Dental</h1>
+
+    <img src="{{ url_for('static', filename='dentistaa.png') }}" alt="Dentista">
+
+    <p> Bienvenido a Central Dental, porfavor rellene el formulario solicitado. </p>
+
+
+
+<main>
+
+    <div class="form-container">
+
+        <form action="altas.html" method="POST">
+
+            <div class="form-group">
+
+                <label>ID del Paciente:</label>
+
+                <input type="number" name="id_paciente" required>
+
+            </div>
+
+        
+
+            <div class="form-group">
+
+                <label>Nombre Completo:</label>
+
+                <input type="text" name="Nombre Completo" required>
+
+            </div>
+
+        
+
+        
+
+            <div class="form-group">
+
+                <label>Fecha de Nacimiento:</label>
+
+                <input type="date" name="fecha_nac" required>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>Género:</label>
+
+                <input type="text" name="Género" placeholder="Ej: Femenino" required>
+
+            </div>
+
+
+
+
+
+            <div class="form-group">
+
+                <label>Teléfono:</label>
+
+                <input type="number" name="telefono" placeholder="Ej: 555 555" required>
+
+            </div>
+
+
+<div class="form-group">
+                <label>Correo:</label>
+                <input type="text" name="Correo electrónico" placeholder="Ej: Manganito@gmaiil.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>RFC:</label>
+                <input type="text" name="RFC" placeholder="Ej: RFPA192W09W" required>
+            </div>
+
+            <div class="form-group">
+                <label>Aseguradora:</label>
+                <input type="text" name="Aseguradora" placeholder="Ej: Seguros Cd Júarez" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Dar de alta al Paciente</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <p>Ramos Flores Alexis </p>
+    <p>Programación </p>
+    <p>24308051280643 </p>
+    <p>4-I </p>
+</footer>
+
+</body>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Poppins", sans-serif;
+        background-color: #48D1CC;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    header {
+        background-color: #66FFCD;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+        color: Teal;
+        font-family: 'Jua', sans-serif;
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 40px 20px;
+        flex: 1;
+    }
+
+    .form-container {
+        max-width: 500px;
+        width: 100%;
+        background: LightCyan;
+        padding: 35px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(245, 228, 242, 0.7);
+        border-top: 6px solid CadetBlue;
+    }
+
+    .form-group {
+        margin-bottom: 22px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: Black;
+        font-size: 14px;
+    }
+
+    input[type="text"], input[type="number"], input[type="date"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid Black;
+        border-radius: 6px;
+        font-family: "Times New Roman", sans-serif;
+        font-size: 14px;
+        background-color: Azure;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: SkyBlue;
+        background-color: AliceBlue;
+        box-shadow: 0 0 5px rgba(202, 158, 195, 0.4);
+    }
+
+    .btn-submit {
+        background-color: DarkSlateGray;
+        color: white;
+        border: none;
+        padding: 14px 15px;
+        width: 100%;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-family: "Poppins", sans-serif;
+        margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+        background-color: DarkSeaGreen;
+    }
+
+    footer {
+        width: 100%;
+        background-color: Azure;
+        padding: 15px 0;
+        text-align: center;
+        font-size: 13px;
+        color: #776a78;
+    }
+
+    footer p {
+        margin: 4px 0;
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Editar Facturación</title>
+</head>
+<body>
+<header>
+    <h1>Editar Facturación</h1>
+</header>
+<main>
+    <div class="form-container">
+        <form action="/facturaciones/actualizar/{{ factura.id_factura }}" method="POST">
+            <div class="form-group">
+                <label>Paciente:</label>
+                <input type="text" name="paciente" value="{{ factura.paciente }}" required>
+            </div>
+            <div class="form-group">
+                <label>Total ($):</label>
+                <input type="text" name="total" value="{{ factura.total }}" required>
+            </div>
+            <div class="form-group">
+                <label>Pagado ($):</label>
+                <input type="text" name="pagado" value="{{ factura.pagado }}" required>
+            </div>
+            <div class="form-group">
+                <label>Saldo ($):</label>
+                <input type="text" name="saldo" value="{{ factura.saldo }}" required>
+            </div>
+            <div class="form-group">
+                <label>Método de Pago:</label>
+                <input type="text" name="metodo" value="{{ factura.metodo }}" required>
+            </div>
+            <button type="submit" class="btn-submit">Guardar Cambios</button>
+            <a href="/facturaciones" class="btn-cancelar">Cancelar</a>
+        </form>
+    </div>
+</main>
+<style>
+    body { font-family: "Poppins", sans-serif; background-color: #48D1CC; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+    h1 { color: Teal; }
+    .form-container { max-width: 500px; width: 100%; background: LightCyan; padding: 35px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top: 6px solid CadetBlue; margin-top: 30px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+    input[type="text"] { width: 100%; padding: 10px; border: 1px solid black; border-radius: 6px; font-size: 14px; background-color: Azure; }
+    .btn-submit { background-color: DarkSlateGray; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+    .btn-submit:hover { background-color: DarkSeaGreen; }
+    .btn-cancelar { display: block; text-align: center; margin-top: 12px; color: gray; text-decoration: none; font-size: 14px; }
+</style>
+</body>
+</html>

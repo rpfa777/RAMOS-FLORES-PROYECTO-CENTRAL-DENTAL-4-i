@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Editar Historial</title>
+</head>
+<body>
+<header>
+    <h1>Editar Historial Médico</h1>
+</header>
+<main>
+    <div class="form-container">
+        <form action="/historial/actualizar/{{ historial.id_historial }}" method="POST">
+            <div class="form-group">
+                <label>Paciente:</label>
+                <input type="text" name="paciente" value="{{ historial.paciente }}" required>
+            </div>
+            <div class="form-group">
+                <label>Alergias:</label>
+                <input type="text" name="alergias" value="{{ historial.alergias }}" required>
+            </div>
+            <div class="form-group">
+                <label>Enfermedades:</label>
+                <input type="text" name="enfermedades" value="{{ historial.enfermedades }}" required>
+            </div>
+            <div class="form-group">
+                <label>Medicamentos:</label>
+                <input type="text" name="medicamentos" value="{{ historial.medicamentos }}" required>
+            </div>
+            <div class="form-group">
+                <label>Cirugías:</label>
+                <input type="text" name="cirugias" value="{{ historial.cirugias }}" required>
+            </div>
+            <div class="form-group">
+                <label>¿Fumador?:</label>
+                <input type="text" name="fumador" value="{{ historial.fumador }}" required>
+            </div>
+            <div class="form-group">
+                <label>Diagnóstico:</label>
+                <input type="text" name="diagnostico" value="{{ historial.diagnostico }}" required>
+            </div>
+            <button type="submit" class="btn-submit">Guardar Cambios</button>
+            <a href="/historial" class="btn-cancelar">Cancelar</a>
+        </form>
+    </div>
+</main>
+<style>
+    body { font-family: "Poppins", sans-serif; background-color: #48D1CC; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+    h1 { color: Teal; }
+    .form-container { max-width: 500px; width: 100%; background: LightCyan; padding: 35px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border-top: 6px solid CadetBlue; margin-top: 30px; }
+    .form-group { margin-bottom: 18px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+    input[type="text"] { width: 100%; padding: 10px; border: 1px solid black; border-radius: 6px; font-size: 14px; background-color: Azure; }
+    .btn-submit { background-color: DarkSlateGray; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+    .btn-submit:hover { background-color: DarkSeaGreen; }
+    .btn-cancelar { display: block; text-align: center; margin-top: 12px; color: gray; text-decoration: none; font-size: 14px; }
+</style>
+</body>
+</html>
